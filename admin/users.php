@@ -14,10 +14,6 @@
                   $sql="SELECT * FROM user ORDER BY user_id  DESC";
                   $result=mysqli_query($conn,$sql) or die("query unsucessfull!!");
                   if(mysqli_num_rows($result)>0){
-
-
-
-
                 ?>
                   <table class="content-table">
                       <thead>
