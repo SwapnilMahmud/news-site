@@ -4,8 +4,6 @@ session_start();
 if(isset($_SESSION["username"])){
   header("Location:{$hostname}/admin/post.php");
 }
-
-
 ?>
 
 <!doctype html>
@@ -40,9 +38,8 @@ if(isset($_SESSION["username"])){
                             <input type="submit" name="login" class="btn btn-primary" value="login" />
                         </form>
                         <!-- /Form  End -->
-                         <?php
-
-                               if(isset($_POST['login'])){
+                          <?php
+                                if(isset($_POST['login'])){
                                  include"config.php";
                                  $username=mysqli_real_escape_string($conn,$_POST['username']);
                                  $password=md5($_POST['password']);
@@ -50,7 +47,7 @@ if(isset($_SESSION["username"])){
                                  $result=mysqli_query($conn,$sql) or die("connection faield");
                                  if(mysqli_num_rows($result)>0){
                                    while($row=mysqli_fetch_assoc($result)){
-                                     session_start();
+                                      session_start();
                                       $_SESSION["username"]=$row['username'];
                                       $_SESSION["user_id"]=$row['user_id'];
                                       $_SESSION["user_role"]=$row['role'];
