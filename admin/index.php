@@ -1,10 +1,7 @@
-<?php
-include"config.php";
-session_start();
-if(isset($_SESSION["username"])){
-  header("Location:{$hostname}/admin/post.php");
-}
-?>
+<?php include"config.php";
+  session_start();
+  if(isset($_SESSION["username"])){
+     header("Location:{$hostname}/admin/post.php"); } ?>
 
 <!doctype html>
 <html>
@@ -53,10 +50,8 @@ if(isset($_SESSION["username"])){
                                       $_SESSION["user_role"]=$row['role'];
                                       header("Location:{$hostname}/admin/post.php");
                                    }
-
-                                 }else{
-                                   echo '<div class="alert alert-danger">username and password wrong</div>';
                                  }
+                                 else{ echo '<div class="alert alert-danger">username and password wrong</div>'; }
                                }
                          ?>
                     </div>
