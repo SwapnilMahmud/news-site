@@ -14,7 +14,7 @@ header("Location: {$hostname}/admin/post.php");}?>
                 <?php
                   include"config.php";
                   $limit=3;
-                  if($_GET['page']){
+                  if(isset($_GET['page'])){
                     $page=$_GET['page'];
                   }else{
                     $page=1;
