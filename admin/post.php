@@ -54,7 +54,7 @@
                               <td><?php echo $row['post_date'];?></td>
                               <td><?php echo $row['username'];?></td>
                               <td class='edit'><a href='update-post.php?id=<?php echo $row['post_id'];?>'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-post.php?id=<?php echo $row['post_id'];?>'><i class='fa fa-trash-o'></i></a></td>
+                              <td class='delete'><a href='delete-post.php?id=<?php echo $row['post_id'];?>&catid=<?php echo $row['category'];?>'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                         <?php } ?>
                       </tbody>
@@ -66,9 +66,9 @@
                    $total_records=mysqli_num_rows($result3);
                    $limit=3;
                    $total_page=ceil($total_records/$limit);
-                   echo '<ul class="pagination admin-pagination">';
+                      echo '<ul class="pagination admin-pagination">';
                    if($page>1){
-                     echo '<li><a href="post.php?page='.($page-1).'">prev</a></li>';
+                      echo '<li><a href="post.php?page='.($page-1).'">prev</a></li>';
                    }
                    for($i=1; $i<=$total_page; $i++){
                      if($i == $page){
