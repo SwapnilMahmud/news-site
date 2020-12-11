@@ -84,6 +84,8 @@
                     }
 
                         echo '</ul>';
+                  }else{
+                    echo "<h2>no records found</h2>";
                   }
 
                   ?>
